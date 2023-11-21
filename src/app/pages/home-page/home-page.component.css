@@ -1,22 +1,59 @@
-.todo{
-    background-color: yellow;
-    height: auto;
+/* home-page.component.css */
+body {
+  background-image: url('../../../assets/todo.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image file */
+  background-size: cover; /* This property ensures that the background image covers the entire body */
+  background-position: center; /* This property centers the background image */
+  background-repeat: no-repeat; /* This property ensures that the background image is not repeated */
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
 }
-.box{
-    width: 50%;
+.todo {
+    /* background-color: whitesmoke; */
+    background-image: url('../../../assets/todo.jpg');
+    background-size: cover; /* This property ensures that the background image covers the entire body */
+    background-position: center; /* This property centers the background image */
+    background-repeat: no-repeat; /* This property ensures that the background image is not repeated */
+    margin: 100; /* Remove default body margin */
+    padding: 100; 
     height: auto;
+  }
+  
+  .box {
+    width: 50%;
+    max-height: 550px;
     border-radius: 20px;
     background-color: white;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-   overflow: scroll; 
-    
-}
-.inputAdd{
+    overflow: auto;
+    scroll-behavior: smooth;
+  }
+  
+  .inputAdd {
     border-radius: 5px;
-    background-color: gold;
+    background-color: white;
     width: 50vh;
-    
-}
-i{
+  }
+  
+  i {
     cursor: pointer;
+  }
+  input[type=checkbox]:checked+p.strikethrough
+  {
+    text-decoration: line-through;
+    color: red;
 }
+  
+  .finished-task {
+    text-decoration: line-through;
+    color: red; /* You can adjust the color as needed */
+       
+  }
+  .compl{
+    text-decoration: line-through;
+    color: red
+  }
+
+input[type=checkbox]:checked + p.strikethrough {
+    text-decoration:line-through;
+    color: red;
+  }

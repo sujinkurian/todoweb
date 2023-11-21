@@ -1,13 +1,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
+  constructor(private http: HttpClient) { }
 
-  constructor(private http:HttpClient) { }
-  getTodo(){
-    return this.http.get('https://jsonplaceholder.typicode.com/todos')
+  getTodo(): Observable<any[]> {
+    return this.http.get<any[]>('https://jsonplaceholder.typicode.com/todos');
+  }
+
+  // If you have other methods in your service, you can add them here
+  deleteTodo(id: any): Observable<any> {
+    // Implement your delete logic here
+    return this.http.delete<any>(`https://jsonplaceholder.typicode.com/todos/${id}`);
   }
 }
